@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:wish_list/widgets/task_list.dart';
+import 'package:wish_list/widgets/task_tile.dart';
 
 class TasksScreen extends StatelessWidget {
-  const TasksScreen({Key? key}) : super(key: key);
+  // const TasksScreen({Key? key}) : super(key: key);
+  late bool cheek = true;
+
+  Widget bildBottomSheet(BuildContext context) {
+    return Container(
+      child: Center(
+        child: Text('gdfgdfg'),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -9,9 +20,10 @@ class TasksScreen extends StatelessWidget {
       backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
-        child: Icon(
-          Icons.add,
-        ),
+        child: Icon(Icons.add),
+        onPressed: () {
+          showModalBottomSheet(context: context, builder: bildBottomSheet);
+        },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,6 +62,8 @@ class TasksScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: TasksList(),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
