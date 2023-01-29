@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:wish_list/widgets/task_list.dart';
 import 'package:wish_list/widgets/task_tile.dart';
+import 'add_task_screen.dart';
 
 class TasksScreen extends StatelessWidget {
   // const TasksScreen({Key? key}) : super(key: key);
   late bool cheek = true;
-
-  Widget bildBottomSheet(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('gdfgdfg'),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +15,11 @@ class TasksScreen extends StatelessWidget {
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
         onPressed: () {
-          showModalBottomSheet(context: context, builder: bildBottomSheet);
+          showModalBottomSheet(
+              context: context,
+              builder: (context) => AddTaskScreen(),
+          backgroundColor: Colors.transparent,
+          );
         },
       ),
       body: Column(
