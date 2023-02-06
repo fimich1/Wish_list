@@ -10,6 +10,7 @@ class AddTaskScreen extends StatelessWidget {
     return Container(
       color: Color(0xff757575),
       child: Container(
+        padding: EdgeInsets.all(20.0),
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
@@ -17,8 +18,10 @@ class AddTaskScreen extends StatelessWidget {
               topRight: Radius.circular(20.0),
             )),
         child: Column(
-          children: [
-            Text('Добавить вводную',
+          crossAxisAlignment: CrossAxisAlignment.stretch ,
+          children: <Widget> [
+            Text('Добавить задачу',
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 30.0,
               color: Colors.lightBlueAccent,
@@ -29,12 +32,14 @@ class AddTaskScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             TextButton (
-                onPressed: null,
               style: TextButton.styleFrom(
                 backgroundColor: Colors.lightBlueAccent,
                 foregroundColor: Colors.white,
               ),
-                child: const Text('Добавить'),
+
+                onPressed: null, // добавляет задачку
+
+                child: const Text('+++'),
 
 
             ),
